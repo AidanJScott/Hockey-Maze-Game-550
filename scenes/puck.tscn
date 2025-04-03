@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://baplx7uprs8yt"]
 
 [ext_resource type="Script" path="res://scripts/puckScript.gd" id="1_5dupl"]
-[ext_resource type="Texture2D" uid="uid://bxiuwxx2ortm5" path="res://assets/puckSprite.png" id="2_10uek"]
-[ext_resource type="Texture2D" uid="uid://dtml5blmi1ca3" path="res://assets/arrow.png" id="3_7tdh7"]
+[ext_resource type="Texture2D" uid="uid://bxiuwxx2ortm5" path="res://Assets/puckSprite.png" id="2_10uek"]
+[ext_resource type="Texture2D" uid="uid://dtml5blmi1ca3" path="res://Assets/arrow.png" id="3_7tdh7"]
 [ext_resource type="Script" path="res://scripts/arrow.gd" id="3_xdc5d"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alv8x"]
@@ -38,6 +38,7 @@ tick_count = 50
 ticks_on_borders = true
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_alv8x")
 gravity_scale = 0.0
 lock_rotation = true
