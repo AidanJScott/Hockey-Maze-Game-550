@@ -1,3 +1,62 @@
-[gd_scene format=3 uid="uid://gkutwrqflyvv"]
+[gd_scene load_steps=7 format=3 uid="uid://baplx7uprs8yt"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://scenes/puckScript.gd" id="1_1lnun"]
+[ext_resource type="Texture2D" uid="uid://bwyxt5srj8d76" path="res://Assets/puckSprite.png" id="2_10uek"]
+[ext_resource type="Texture2D" uid="uid://c10pmtk2ew5gq" path="res://Assets/arrow.png" id="3_7tdh7"]
+[ext_resource type="Script" path="res://scenes/arrow.gd" id="4_co4gw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alv8x"]
+rough = true
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwvr7"]
+radius = 9.0
+
+[node name="puck" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="powerBar" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="slider" type="HSlider" parent="CanvasLayer/powerBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 165.0
+offset_top = 242.0
+offset_right = 474.0
+offset_bottom = 343.0
+grow_horizontal = 2
+grow_vertical = 0
+tick_count = 50
+ticks_on_borders = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_alv8x")
+gravity_scale = 0.0
+lock_rotation = true
+freeze_mode = 1
+script = ExtResource("1_1lnun")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("3_7tdh7")
+script = ExtResource("4_co4gw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_qwvr7")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(2.38419e-07, -4.17233e-07)
+scale = Vector2(3, 3)
+texture = ExtResource("2_10uek")
+
+[node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
+
+[connection signal="value_changed" from="CanvasLayer/powerBar/slider" to="RigidBody2D" method="sliderChanged"]

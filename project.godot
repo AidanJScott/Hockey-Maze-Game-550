@@ -15,6 +15,10 @@ run/main_scene="res://scenes/baseLevel.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PuckVelocity="*res://puck_velocity.gd"
+
 [display]
 
 window/size/viewport_width=640
