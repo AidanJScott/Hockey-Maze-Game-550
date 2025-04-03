@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pkqc0cffgcow"
-path="res://.godot/imported/IceTile.png-485d692565ae0f3c0950554701d8a7e5.ctex"
+uid="uid://cq1sekconbn4m"
+path="res://.godot/imported/IceTile.png-82eeb2160d0d4ca05d08068b2148a8a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/IceTile.png"
-dest_files=["res://.godot/imported/IceTile.png-485d692565ae0f3c0950554701d8a7e5.ctex"]
+source_file="res://assets/IceTile.png"
+dest_files=["res://.godot/imported/IceTile.png-82eeb2160d0d4ca05d08068b2148a8a0.ctex"]
 
 [params]
 

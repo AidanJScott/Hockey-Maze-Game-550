@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r41qsnwig0wa"
-path="res://.godot/imported/IceTileAlt.png-ff54519b0b1f50fdfcd8205ae4fbd774.ctex"
+uid="uid://bf61j5073ikxq"
+path="res://.godot/imported/newTempGoal.png-17120bffee98d83363d1ebb650101687.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/IceTileAlt.png"
-dest_files=["res://.godot/imported/IceTileAlt.png-ff54519b0b1f50fdfcd8205ae4fbd774.ctex"]
+source_file="res://assets/newTempGoal.png"
+dest_files=["res://.godot/imported/newTempGoal.png-17120bffee98d83363d1ebb650101687.ctex"]
 
 [params]
 

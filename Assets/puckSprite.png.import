@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwyxt5srj8d76"
-path="res://.godot/imported/puckSprite.png-4d9e55255255aaba6f7f647260c5a23f.ctex"
+uid="uid://bxiuwxx2ortm5"
+path="res://.godot/imported/puckSprite.png-df78c8d7dd762bf90f16f8da842bbe72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/puckSprite.png"
-dest_files=["res://.godot/imported/puckSprite.png-4d9e55255255aaba6f7f647260c5a23f.ctex"]
+source_file="res://assets/puckSprite.png"
+dest_files=["res://.godot/imported/puckSprite.png-df78c8d7dd762bf90f16f8da842bbe72.ctex"]
 
 [params]
 
