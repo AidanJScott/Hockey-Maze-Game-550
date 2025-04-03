@@ -1,5 +1,6 @@
 extends RigidBody2D
-const SliderFactor = 0.01
+const SliderFactor = 0.02
+const dragCoefficient = 0.01
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,7 +10,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	# Assuming 'velocity' is a Vector2 representing the object's velocity
+	var dragForce = -self.get_linear_velocity() * dragCoefficient # drag_coefficient is a value between 0 and 1
+	# Apply the drag force
+	apply_central_impulse(dragForce)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_select"):
