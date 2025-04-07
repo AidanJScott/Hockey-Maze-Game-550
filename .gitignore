@@ -4,3 +4,5 @@
 *.import
 .gitattributes
 /addons
+*/addons
+/addons/gut
