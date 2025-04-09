@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://s6m8cdrdfsgk"]
+
+[ext_resource type="PackedScene" uid="uid://j4qxgf4h1wyv" path="res://UI/toolbar.tscn" id="1_1f0og"]
+[ext_resource type="PackedScene" uid="uid://ci4j0lwpq1lou" path="res://UI/selection.tscn" id="2_oofnb"]
+[ext_resource type="PackedScene" uid="uid://dugdu1fajc6jj" path="res://UI/existingEntities.tscn" id="3_oyanv"]
+
+[node name="LevelEditor" type="Node2D"]
+
+[node name="ObjectContainer" type="Node2D" parent="."]
+
+[node name="Grid" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Toolbar" parent="UI" instance=ExtResource("1_1f0og")]
+
+[node name="Selection" parent="UI" instance=ExtResource("2_oofnb")]
+
+[node name="ExistingEntities" parent="UI" instance=ExtResource("3_oyanv")]
