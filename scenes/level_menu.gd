@@ -2,9 +2,10 @@ extends Control
 
 #The levels would probably fit better it a script with static data and then add to it using the methods.
 var levels = [
-	{"id": 1, "name": "Placeholder Level 1"},
-	{"id": 2, "name": "Placeholder Level 2"},
-	{"id": 3, "name": "Placeholder Level 3"}
+	{"path": "res://scenes/baseLevel.tscn", "name": "Base Level"},
+	{"path": "", "name": "Placeholder Level 1"},
+	{"path": "", "name": "Placeholder Level 2"},
+	{"path": "", "name": "Placeholder Level 3"}
 ]
 
 # singleton
@@ -21,7 +22,7 @@ func update_level_menu():
 func add_level_button(level):
 	var button = Button.new()
 	button.text = level.name
-	button.connect("pressed", Callable(self, "_on_level_selected").bind(level.id))
+	button.connect("pressed", Callable(self, "_on_level_selected").bind(level.path))
 	container.add_child(button)
 
 func _on_level_selected(level_id):
