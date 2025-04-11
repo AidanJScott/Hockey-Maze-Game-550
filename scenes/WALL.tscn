@@ -1,18 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://lh35nh4jxrkd"]
 
-[ext_resource type="Texture2D" uid="uid://bemc5oewaul1a" path="res://Assets/wallSprite.png" id="1_3qsor"]
+[ext_resource type="Texture2D" uid="uid://b1ny5sp63e7qo" path="res://Assets/bricked 2.jpg" id="1_mv4vm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6uw8l"]
 size = Vector2(7.85, 35.9)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 scale = Vector2(20, 20)
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
-texture = ExtResource("1_3qsor")
+position = Vector2(0.001561, -2.2)
+scale = Vector2(0.0081294, 0.0363544)
+texture = ExtResource("1_mv4vm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.0750002, -2.05)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6uw8l")
