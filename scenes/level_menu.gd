@@ -2,9 +2,9 @@ extends Control
 
 #The levels would probably fit better it a script with static data and then add to it using the methods.
 var levels = [
-	{"id": 1, "name": "Placeholder Level 1"},
-	{"id": 2, "name": "Placeholder Level 2"},
-	{"id": 3, "name": "Placeholder Level 3"}
+	{"path": "", "name": "Placeholder Level 1"},
+	{"path": "", "name": "Placeholder Level 2"},
+	{"path": "", "name": "Placeholder Level 3"}
 ]
 
 # singleton
@@ -27,6 +27,9 @@ func add_level_button(level):
 func _on_level_selected(level_id):
 	print("Selected Level:", level_id)
 	
+
+func get_levels():
+	return levels
 
 func add_level(level_name):
 	var new_id = levels.size() + 1

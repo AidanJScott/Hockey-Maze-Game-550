@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://2r4eb3lum0ls"]
+
+[ext_resource type="Script" path="res://scenes/startScreen.gd" id="1_e5827"]
+
+[sub_resource type="SystemFont" id="SystemFont_hoe3o"]
+msdf_size = 100
+
+[sub_resource type="Theme" id="Theme_skyba"]
+OptionButton/fonts/font = SubResource("SystemFont_hoe3o")
+
+[sub_resource type="LabelSettings" id="LabelSettings_tsbx0"]
+font_size = 200
+font_color = Color(0.79323, 0.956811, 0.946967, 1)
+outline_size = 2
+outline_color = Color(0.603361, 0.706616, 0.902738, 1)
+shadow_color = Color(0.47312, 0.265552, 0.24849, 0)
+
+[sub_resource type="SystemFont" id="SystemFont_ssy64"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = SubResource("Theme_skyba")
+script = ExtResource("1_e5827")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -26.0
+offset_right = 95.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hockey Maze Game"
+label_settings = SubResource("LabelSettings_tsbx0")
+
+[node name="StartOptionButton" type="OptionButton" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.345407, 0.464922, 0.61917, 1)
+theme_override_fonts/font = SubResource("SystemFont_ssy64")
+theme_override_font_sizes/font_size = 100
