@@ -8,27 +8,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="WallButton" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="ObstacleButton" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="BackButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
 
-[node name="EnemyButton" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="TitleLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
 
-[node name="GoalButton" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="LevelNameInput" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
 
-[node name="DeleteButton" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="SaveButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="UndoButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="RedoButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="ClearButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="GridToggle" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TestButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="InfoButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="HelpButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
