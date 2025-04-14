@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://buctmytooqd24"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_qnvq4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qnvq4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelSelectorButton" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LevelEditorButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Settings" type="MenuButton" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SettingsPopup" type="AcceptDialog" parent="."]
