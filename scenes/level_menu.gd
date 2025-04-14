@@ -29,6 +29,9 @@ func _on_level_selected(level_id):
 	print("Selected Level:", level_id)
 	
 
+func get_levels():
+	return levels
+
 func add_level(level_name):
 	var new_id = levels.size() + 1
 	var new_level = {"id": new_id, "name": level_name}
