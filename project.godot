@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Hockey-Maze-Game-550"
-run/main_scene="res://scenes/baseLevel.tscn"
+run/main_scene="res://scenes/startScreen.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PuckVelocity="*res://puck_velocity.gd"
-Settings="*res://scripts/settings.gd"
+Settings="*res://settings.gd"
 
 [display]
 
