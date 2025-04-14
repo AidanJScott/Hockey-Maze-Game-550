@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://j4qxgf4h1wyv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="LevelNameInput" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="UndoButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="RedoButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="ClearButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="GridToggle" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TestButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="InfoButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="HelpButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2

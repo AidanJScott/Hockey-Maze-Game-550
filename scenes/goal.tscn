@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ndutpaw3ipib"]
+
+[ext_resource type="PackedScene" uid="uid://cv1joqspgg37g" path="res://scenes/scoreAREA.tscn" id="1_kt5ug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bka2u"]
+size = Vector2(20, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2p3i"]
+size = Vector2(200, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gg76"]
+size = Vector2(20, 126)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" parent="." instance=ExtResource("1_kt5ug")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
+position = Vector2(45, 0)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_bka2u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
+position = Vector2(0, -27)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c2p3i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
+position = Vector2(-45, 0)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_2gg76")

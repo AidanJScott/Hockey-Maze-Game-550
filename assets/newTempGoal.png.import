@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtml5blmi1ca3"
-path="res://.godot/imported/arrow.png-57f8c059c3343415ea6369e587d21c52.ctex"
+uid="uid://bf61j5073ikxq"
+path="res://.godot/imported/newTempGoal.png-a3ba493f94943b8b87a1b79c5a545ae6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-57f8c059c3343415ea6369e587d21c52.ctex"]
+source_file="res://Assets/newTempGoal.png"
+dest_files=["res://.godot/imported/newTempGoal.png-a3ba493f94943b8b87a1b79c5a545ae6.ctex"]
 
 [params]
 

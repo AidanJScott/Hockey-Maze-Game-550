@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://ct2r402csj4b5"]
 
-[ext_resource type="Texture2D" uid="uid://kvqkwaoinvdw" path="res://Assets/IceTileAlt.png" id="1_oduqu"]
+[ext_resource type="Texture2D" uid="uid://r41qsnwig0wa" path="res://Assets/IceTileAlt.png" id="1_oduqu"]
 [ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="2_x6tvr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w4iys"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=12 format=3 uid="uid://dl1sr3nxdojk3"]
+
+[ext_resource type="PackedScene" uid="uid://j4qxgf4h1wyv" path="res://UI/toolbar.tscn" id="1_1f0og"]
+[ext_resource type="Script" path="res://scripts/level_editor.gd" id="1_8va3i"]
+[ext_resource type="PackedScene" uid="uid://ci4j0lwpq1lou" path="res://UI/selection.tscn" id="2_oofnb"]
+[ext_resource type="Script" path="res://scripts/selection.gd" id="3_80mux"]
+[ext_resource type="PackedScene" uid="uid://dugdu1fajc6jj" path="res://UI/existingEntities.tscn" id="3_oyanv"]
+[ext_resource type="Script" path="res://scripts/editor_toolbox.gd" id="4_4m0hm"]
+[ext_resource type="Script" path="res://scripts/existing_entities.gd" id="4_7ym87"]
+[ext_resource type="PackedScene" uid="uid://cbhaps1jpgu3v" path="res://UI/editorToolbox.tscn" id="4_mdb1q"]
+[ext_resource type="PackedScene" uid="uid://7yg5qi2rhn3h" path="res://UI/coordinatesDisplay.tscn" id="5_e2x1k"]
+[ext_resource type="Script" path="res://scripts/coordinates_display.gd" id="5_vlxtm"]
+[ext_resource type="Script" path="res://scripts/toolbar.gd" id="9_c6rkm"]
+
+[node name="LevelEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8va3i")
+
+[node name="ObjectContainer" type="Node2D" parent="."]
+
+[node name="Grid" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Selection" parent="UI" instance=ExtResource("2_oofnb")]
+script = ExtResource("3_80mux")
+
+[node name="ExistingEntities" parent="UI" instance=ExtResource("3_oyanv")]
+script = ExtResource("4_7ym87")
+
+[node name="EditorToolbox" parent="UI" instance=ExtResource("4_mdb1q")]
+script = ExtResource("4_4m0hm")
+
+[node name="CoordinatesDisplay" parent="UI" instance=ExtResource("5_e2x1k")]
+script = ExtResource("5_vlxtm")
+
+[node name="Toolbar" parent="UI" instance=ExtResource("1_1f0og")]
+script = ExtResource("9_c6rkm")

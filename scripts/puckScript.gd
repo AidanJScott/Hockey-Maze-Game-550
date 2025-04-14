@@ -1,5 +1,5 @@
 extends RigidBody2D
-const SliderFactor = 0.02
+const SliderFactor = 7
 const dragCoefficient = 0.01
 
 
@@ -16,13 +16,20 @@ func _process(delta: float) -> void:
 	apply_central_impulse(dragForce)
 
 func _input(event: InputEvent) -> void:
+	# On spacebar clicked
 	if event.is_action_pressed("ui_select"):
-		print("click")
+		# get the position of the mouse and the position of the puck, 
+		# find the difference to get a vector relative to the puck
 		var mouseVector = get_global_mouse_position()
 		var puckDirection = mouseVector - self.global_position
-		puckDirection *= Vector2(PuckVelocity.puckVelocity * SliderFactor, PuckVelocity.puckVelocity * SliderFactor)
-		print(puckDirection)
-		apply_impulse(puckDirection)
+		
+		# normalize the vector to make mouse distance from the puck have no effect
+		var unitPuckDirection = puckDirection.normalized()
+		
+		# multiply the normalized vector by the value on the slider 
+		# and apply the force to the puck
+		unitPuckDirection *= Vector2(PuckVelocity.puckVelocity * SliderFactor, PuckVelocity.puckVelocity * SliderFactor)
+		apply_impulse(unitPuckDirection)
 
 
 func sliderChanged(value: float) -> void:
