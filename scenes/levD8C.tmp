@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl1sr3nxdojk3"]
+[gd_scene load_steps=12 format=3 uid="uid://dl1sr3nxdojk3"]
 
 [ext_resource type="PackedScene" uid="uid://j4qxgf4h1wyv" path="res://UI/toolbar.tscn" id="1_1f0og"]
 [ext_resource type="Script" path="res://scripts/level_editor.gd" id="1_8va3i"]
 [ext_resource type="PackedScene" uid="uid://ci4j0lwpq1lou" path="res://UI/selection.tscn" id="2_oofnb"]
 [ext_resource type="Script" path="res://scripts/selection.gd" id="3_80mux"]
 [ext_resource type="PackedScene" uid="uid://dugdu1fajc6jj" path="res://UI/existingEntities.tscn" id="3_oyanv"]
+[ext_resource type="Script" path="res://scripts/editor_toolbox.gd" id="4_4m0hm"]
 [ext_resource type="Script" path="res://scripts/existing_entities.gd" id="4_7ym87"]
 [ext_resource type="PackedScene" uid="uid://cbhaps1jpgu3v" path="res://UI/editorToolbox.tscn" id="4_mdb1q"]
 [ext_resource type="PackedScene" uid="uid://7yg5qi2rhn3h" path="res://UI/coordinatesDisplay.tscn" id="5_e2x1k"]
@@ -20,39 +21,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8va3i")
 
-[node name="EditorToolbox" parent="." instance=ExtResource("4_mdb1q")]
-custom_minimum_size = Vector2(60, 32)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.13
-anchor_right = 0.079
-anchor_bottom = 0.407
-offset_top = -0.400009
-offset_right = -1.68001
-offset_bottom = 0.440002
-grow_horizontal = 1
-
 [node name="Toolbar" parent="." instance=ExtResource("1_1f0og")]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 1
 anchors_preset = 10
 anchor_bottom = 0.0
-offset_bottom = 102.0
+offset_bottom = 31.0
 grow_vertical = 1
 size_flags_horizontal = 3
 script = ExtResource("9_c6rkm")
 
+[node name="EditorToolbox" parent="." instance=ExtResource("4_mdb1q")]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_top = -169.0
+offset_right = 100.0
+offset_bottom = -6.0
+grow_horizontal = 1
+script = ExtResource("4_4m0hm")
+
 [node name="SelectionBox" parent="." instance=ExtResource("2_oofnb")]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.947917
-anchor_top = 0.131481
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.763889
-offset_left = -50.0
-offset_top = -2.0
-offset_bottom = -2.0
+offset_left = -100.0
+offset_top = 50.0
+offset_bottom = 250.0
 grow_horizontal = 0
 script = ExtResource("3_80mux")
 metadata/_edit_use_anchors_ = true
@@ -60,12 +60,12 @@ metadata/_edit_use_anchors_ = true
 [node name="CoordinatesDisplay" parent="." instance=ExtResource("5_e2x1k")]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.825
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -150.0
+offset_left = -100.0
 offset_top = -32.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -73,31 +73,22 @@ script = ExtResource("5_vlxtm")
 metadata/_edit_use_anchors_ = true
 
 [node name="ExistingEntities" parent="." instance=ExtResource("3_oyanv")]
-light_mask = 2
-visibility_layer = 2
-custom_minimum_size = Vector2(60, 32)
+custom_minimum_size = Vector2(100, 32)
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.443519
-anchor_right = 0.0792708
-offset_right = -2.2
+anchor_top = -0.4
+offset_top = 328.0
+offset_right = 100.0
+offset_bottom = 360.0
 script = ExtResource("4_7ym87")
 metadata/_edit_use_anchors_ = true
 
-[node name="WorkspaceWrapper" type="CanvasLayer" parent="."]
-layer = 0
-
-[node name="ObjectContainer" type="Node2D" parent="WorkspaceWrapper"]
-
-[node name="DropArea" type="Panel" parent="."]
-custom_minimum_size = Vector2(240, 220)
+[node name="WorkspaceWrapper" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 204.0
-offset_top = 140.0
-offset_right = -197.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+
+[node name="ObjectContainer" type="Node2D" parent="WorkspaceWrapper"]

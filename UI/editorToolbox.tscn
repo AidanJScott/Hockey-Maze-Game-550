@@ -1,27 +1,42 @@
-[gd_scene format=3 uid="uid://cbhaps1jpgu3v"]
+[gd_scene load_steps=2 format=3 uid="uid://cbhaps1jpgu3v"]
 
-[node name="EditorToolbox" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 8.0
-offset_bottom = 71.0
+[ext_resource type="Script" path="res://scripts/editor_toolbox.gd" id="1_r04et"]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="EditorToolbox" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r04et")
 
-[node name="EditorTools" type="Label" parent="VBoxContainer"]
+[node name="AddButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_vertical = 3
+action_mode = 0
+text = "Add"
 
-[node name="AddButton" type="Button" parent="VBoxContainer"]
+[node name="EntityDropdown" type="OptionButton" parent="."]
 layout_mode = 2
+size_flags_vertical = 3
+item_count = 3
+popup/item_0/text = "Wall"
+popup/item_1/text = "Enemy"
+popup/item_1/id = 1
+popup/item_2/text = "Goal"
+popup/item_2/id = 2
 
-[node name="EditButton" type="Button" parent="VBoxContainer"]
+[node name="EditButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_vertical = 3
+text = "Edit"
 
-[node name="DeleteButton" type="Button" parent="VBoxContainer"]
+[node name="DeleteButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_vertical = 3
+text = "Delete"
 
-[node name="SelectionButton" type="Button" parent="VBoxContainer"]
+[node name="SelectButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_vertical = 3
+text = "Select"

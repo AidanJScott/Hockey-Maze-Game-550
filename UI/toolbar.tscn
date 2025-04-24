@@ -1,47 +1,53 @@
 [gd_scene format=3 uid="uid://j4qxgf4h1wyv"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
+[node name="HBoxContainer" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BackButton" type="Button" parent="HBoxContainer"]
+[node name="BackButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
 
-[node name="TitleLabel" type="Label" parent="HBoxContainer"]
+[node name="SaveButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Save"
 
-[node name="LevelNameInput" type="LineEdit" parent="HBoxContainer"]
+[node name="UndoButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Undo"
 
-[node name="SaveButton" type="Button" parent="HBoxContainer"]
+[node name="RedoButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Redo"
 
-[node name="UndoButton" type="Button" parent="HBoxContainer"]
+[node name="ClearButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Clear"
 
-[node name="RedoButton" type="Button" parent="HBoxContainer"]
+[node name="GridToggleButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Grid"
 
-[node name="ClearButton" type="Button" parent="HBoxContainer"]
+[node name="TestButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Test"
 
-[node name="GridToggle" type="Button" parent="HBoxContainer"]
+[node name="InfoButton" type="Button" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Info"
 
-[node name="TestButton" type="Button" parent="HBoxContainer"]
+[node name="LevelNameInput" type="LineEdit" parent="."]
 layout_mode = 2
-
-[node name="InfoButton" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="HelpButton" type="Button" parent="HBoxContainer"]
-layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Name"

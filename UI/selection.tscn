@@ -1,5 +1,28 @@
 [gd_scene format=3 uid="uid://ci4j0lwpq1lou"]
 
-[node name="Selection" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="SelectionBox" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 83.0625
+offset_bottom = 128.0
+
+[node name="Selected Object" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="XSpinBox" type="SpinBox" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="YSpinBox" type="SpinBox" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RotationSpinBox" type="SpinBox" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LengthSpinBox" type="SpinBox" parent="VBoxContainer"]
+layout_mode = 2
