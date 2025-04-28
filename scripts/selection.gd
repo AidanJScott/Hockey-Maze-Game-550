@@ -1,13 +1,19 @@
 extends Control
 
-@onready var x_spinbox = $XSpinBox
-@onready var y_spinbox = $YSpinBox
-@onready var rotation_spinbox = $RotationSpinBox
-@onready var length_spinbox = $LengthSpinBox
+@onready var x_spinbox = $VBoxContainer/XSpinBox
+@onready var y_spinbox = $VBoxContainer/YSpinBox
+@onready var rotation_spinbox = $VBoxContainer/RotationSpinBox
+@onready var length_spinbox = $VBoxContainer/LengthSpinBox
 
 var selected_node: Node2D = null
 
 func _ready():
+	print("Current scene:", get_tree().get_current_scene())
+	print("x_spinbox:", x_spinbox)
+	print("y_spinbox:", y_spinbox)
+	print("rotation_spinbox:", rotation_spinbox)
+	print("length_spinbox:", length_spinbox)
+
 	x_spinbox.value_changed.connect(_on_x_changed)
 	y_spinbox.value_changed.connect(_on_y_changed)
 	rotation_spinbox.value_changed.connect(_on_rotation_changed)

@@ -2,7 +2,7 @@ extends Control
 
 signal entity_selected(entity: Node2D)
 
-@onready var item_list = $VBoxContainer/ItemList
+@onready var item_list = $ItemList
 
 # Stores a reference to each node associated with each item
 var tracked_entities: Array = []

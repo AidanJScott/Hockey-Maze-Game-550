@@ -13,21 +13,37 @@ signal level_name_changed(new_name: String)
 @onready var grid_toggle = $GridToggleButton
 @onready var test_button = $TestButton
 @onready var info_button = $InfoButton
-@onready var help_button = $HelpButton
 @onready var level_name_input = $LevelNameInput
 
+
 func _ready():
-	back_button.pressed.connect(_on_back_pressed)
-	save_button.pressed.connect(_on_save_pressed)
-	undo_button.pressed.connect(_on_undo_pressed)
-	redo_button.pressed.connect(_on_redo_pressed)
-	clear_button.pressed.connect(_on_clear_pressed)
-	test_button.pressed.connect(_on_test_pressed)
-	info_button.pressed.connect(_on_info_pressed)
-	help_button.pressed.connect(_on_help_pressed)
+	print("BackButton valid?", back_button != null)
+	print("Connecting signals...")
+
+	print("--- TOOLBAR DEBUG ---")
+	print("BackButton:", back_button)
+	print("SaveButton:", save_button)
+	print("UndoButton:", undo_button)
+	print("RedoButton:", redo_button)
+	print("ClearButton:", clear_button)
+	print("GridToggleButton:", grid_toggle)
+	print("TestButton:", test_button)
+	print("InfoButton:", info_button)
+	print("LevelNameInput:", level_name_input)
+	print("---------------------")
+
+	# Your existing connections follow this:
+	back_button.pressed.connect(Callable(self, "_on_back_pressed"))
+	save_button.pressed.connect(Callable(self, "_on_save_pressed"))
+	undo_button.pressed.connect(Callable(self, "_on_undo_pressed"))
+	redo_button.pressed.connect(Callable(self, "_on_redo_pressed"))
+	clear_button.pressed.connect(Callable(self, "_on_clear_pressed"))
+	test_button.pressed.connect(Callable(self, "_on_test_pressed"))
+	info_button.pressed.connect(Callable(self, "_on_info_pressed"))
 
 	grid_toggle.toggled.connect(_on_grid_toggled)
 	level_name_input.text_changed.connect(_on_level_name_changed)
+
 
 func _on_grid_toggled(pressed: bool):
 	emit_signal("grid_toggled", pressed)
@@ -56,6 +72,3 @@ func _on_test_pressed():
 
 func _on_info_pressed():
 	emit_signal("action_requested", "info")
-
-func _on_help_pressed():
-	emit_signal("action_requested", "help")
