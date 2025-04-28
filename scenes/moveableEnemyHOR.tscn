@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq0fmk46jdwu"]
+[gd_scene load_steps=5 format=3 uid="uid://dfe2gillro76k"]
 
 [ext_resource type="Script" path="res://scripts/moveEnemyHORI.gd" id="1_umvas"]
 [ext_resource type="Texture2D" uid="uid://bu3tkrugs3i42" path="res://Assets/enemySpriteTemp.png" id="2_phadd"]

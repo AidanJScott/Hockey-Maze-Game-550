@@ -3,7 +3,7 @@ extends Control
 #The levels would probably fit better it a script with static data and then add to it using the methods.
 var levels = [
 	{"path": "res://scenes/baseLevel.tscn", "name": "Base Level"},
-	{"path": "", "name": "Placeholder Level 1"},
+	{"path": "res://scenes/main_menu.tscn", "name": "Main menu"},
 	{"path": "", "name": "Placeholder Level 2"},
 	{"path": "", "name": "Placeholder Level 3"}
 ]
