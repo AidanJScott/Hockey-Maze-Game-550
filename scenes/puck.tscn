@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://baplx7uprs8yt"]
+[gd_scene load_steps=11 format=3 uid="uid://baplx7uprs8yt"]
 
 [ext_resource type="Script" path="res://scripts/puckScript.gd" id="1_5dupl"]
 [ext_resource type="Texture2D" uid="uid://bxiuwxx2ortm5" path="res://Assets/puckSprite.png" id="2_10uek"]
 [ext_resource type="Texture2D" uid="uid://dtml5blmi1ca3" path="res://Assets/arrow.png" id="3_7tdh7"]
 [ext_resource type="Script" path="res://scripts/arrow.gd" id="3_xdc5d"]
+[ext_resource type="Script" path="res://scenes/score.gd" id="5_f5hk6"]
+[ext_resource type="AudioStream" uid="uid://ckk0fjdftifa6" path="res://music and sounds/godot level music.wav" id="6_1b781"]
+[ext_resource type="AudioStream" uid="uid://cgvrcj682x2fq" path="res://music and sounds/puckhitfx.wav" id="6_oifle"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alv8x"]
 rough = true
@@ -11,6 +14,11 @@ bounce = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwvr7"]
 radius = 9.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_0dlbd"]
+font_size = 20
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="puck" type="Node2D"]
 
@@ -60,4 +68,25 @@ texture = ExtResource("2_10uek")
 
 [node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
 
+[node name="counter display" type="Label" parent="RigidBody2D/Camera2D"]
+offset_left = -7.0
+offset_top = -46.0
+offset_right = 103.0
+offset_bottom = 36.0
+label_settings = SubResource("LabelSettings_0dlbd")
+script = ExtResource("5_f5hk6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.3
+
+[node name="soundFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_oifle")
+pitch_scale = 2.6
+
+[node name="levelMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1b781")
+autoplay = true
+
 [connection signal="value_changed" from="CanvasLayer/powerBar/slider" to="RigidBody2D" method="sliderChanged"]
+[connection signal="body_entered" from="RigidBody2D" to="RigidBody2D" method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="RigidBody2D" method="_on_timer_timeout"]

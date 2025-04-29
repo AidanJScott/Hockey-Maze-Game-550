@@ -1,7 +1,8 @@
 extends RigidBody2D
 const SliderFactor = 12
 const dragCoefficient = 0.01
-
+var inputAllowed = true
+@onready var puckHit = $"../soundFX"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +18,9 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	# On spacebar clicked
-	if event.is_action_pressed("ui_select"):
+	if event.is_action_pressed("ui_select") and (inputAllowed == true):
+		# triggers sound effect
+		puckHit.play()
 		# get the position of the mouse and the position of the puck, 
 		# find the difference to get a vector relative to the puck
 		var mouseVector = get_global_mouse_position()
@@ -25,12 +28,21 @@ func _input(event: InputEvent) -> void:
 		
 		# normalize the vector to make mouse distance from the puck have no effect
 		var unitPuckDirection = puckDirection.normalized()
-		
+		Global.score += 1
 		# multiply the normalized vector by the value on the slider 
 		# and apply the force to the puck
 		unitPuckDirection *= Vector2(PuckVelocity.puckVelocity * SliderFactor, PuckVelocity.puckVelocity * SliderFactor)
 		apply_impulse(unitPuckDirection)
+		
+		# disables input and sets a timer to disable the user 
+		# from shooting the puck while it is in movement
+		inputAllowed = false
+		$"../Timer".start()
 
 
 func sliderChanged(value: float) -> void:
 	PuckVelocity.puckVelocity = value
+
+
+func _on_timer_timeout() -> void:
+	inputAllowed = true
