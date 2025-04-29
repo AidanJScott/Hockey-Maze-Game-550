@@ -1,5 +1,5 @@
 extends RigidBody2D
-const SliderFactor = 7
+const SliderFactor = 12
 const dragCoefficient = 0.01
 
 
