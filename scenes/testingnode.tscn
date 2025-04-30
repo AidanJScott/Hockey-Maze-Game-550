@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://nnjdu6sgfbqy"]
+
+[ext_resource type="Texture2D" uid="uid://6vnrwd6j808a" path="res://Assets/enemy.png" id="1_fmv64"]
+[ext_resource type="Texture2D" uid="uid://jrdiq7bdxada" path="res://Assets/player.png" id="2_ajv6r"]
+[ext_resource type="Script" path="res://thing_1.gd" id="3_pvu5u"]
+
+[node name="testingnode" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(102, 1.5)
+scale = Vector2(11.875, 8.8125)
+texture = ExtResource("1_fmv64")
+
+[node name="thing1" type="Sprite2D" parent="."]
+position = Vector2(-90, 3)
+scale = Vector2(3.55, 3.425)
+texture = ExtResource("2_ajv6r")
+script = ExtResource("3_pvu5u")

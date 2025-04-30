@@ -1,12 +1,50 @@
-[gd_scene load_steps=11 format=3 uid="uid://baplx7uprs8yt"]
+[gd_scene load_steps=18 format=3 uid="uid://baplx7uprs8yt"]
 
 [ext_resource type="Script" path="res://scripts/puckScript.gd" id="1_5dupl"]
+[ext_resource type="Texture2D" uid="uid://jrdiq7bdxada" path="res://Assets/player.png" id="1_xrj1m"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="2_2qeww"]
 [ext_resource type="Texture2D" uid="uid://bxiuwxx2ortm5" path="res://Assets/puckSprite.png" id="2_10uek"]
 [ext_resource type="Texture2D" uid="uid://dtml5blmi1ca3" path="res://Assets/arrow.png" id="3_7tdh7"]
 [ext_resource type="Script" path="res://scripts/arrow.gd" id="3_xdc5d"]
 [ext_resource type="Script" path="res://scenes/score.gd" id="5_f5hk6"]
 [ext_resource type="AudioStream" uid="uid://ckk0fjdftifa6" path="res://music and sounds/godot level music.wav" id="6_1b781"]
 [ext_resource type="AudioStream" uid="uid://cgvrcj682x2fq" path="res://music and sounds/puckhitfx.wav" id="6_oifle"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6fhm"]
+atlas = ExtResource("1_xrj1m")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6myb3"]
+atlas = ExtResource("1_xrj1m")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejlam"]
+atlas = ExtResource("1_xrj1m")
+region = Rect2(0, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51fl1"]
+atlas = ExtResource("1_xrj1m")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbt40"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6fhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6myb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejlam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51fl1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alv8x"]
 rough = true
@@ -21,6 +59,15 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="puck" type="Node2D"]
+
+[node name="player" type="Sprite2D" parent="."]
+position = Vector2(30, 16)
+script = ExtResource("2_2qeww")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(-11.49, -10.28)
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_qbt40")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -76,8 +123,11 @@ offset_bottom = 36.0
 label_settings = SubResource("LabelSettings_0dlbd")
 script = ExtResource("5_f5hk6")
 
+[node name="hitTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.3
+wait_time = 1.8
 
 [node name="soundFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_oifle")
@@ -89,4 +139,5 @@ autoplay = true
 
 [connection signal="value_changed" from="CanvasLayer/powerBar/slider" to="RigidBody2D" method="sliderChanged"]
 [connection signal="body_entered" from="RigidBody2D" to="RigidBody2D" method="_on_body_entered"]
+[connection signal="timeout" from="hitTimer" to="RigidBody2D" method="_on_hit_timer_timeout"]
 [connection signal="timeout" from="Timer" to="RigidBody2D" method="_on_timer_timeout"]

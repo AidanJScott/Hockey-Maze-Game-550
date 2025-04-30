@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cq0fmk46jdwu"]
 
 [ext_resource type="Script" path="res://scripts/moveEnemyHORI.gd" id="1_umvas"]
-[ext_resource type="Texture2D" uid="uid://bu3tkrugs3i42" path="res://Assets/enemySpriteTemp.png" id="2_phadd"]
+[ext_resource type="Texture2D" uid="uid://6vnrwd6j808a" path="res://Assets/enemy.png" id="2_dt03g"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="3_8b55n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iumyy"]
@@ -12,7 +12,9 @@ scale = Vector2(30, 30)
 script = ExtResource("1_umvas")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_phadd")
+position = Vector2(1.49012e-08, -2)
+scale = Vector2(0.146615, 0.125521)
+texture = ExtResource("2_dt03g")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
