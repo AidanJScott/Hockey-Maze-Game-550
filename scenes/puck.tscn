@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/puckScript.gd" id="1_5dupl"]
 [ext_resource type="Texture2D" uid="uid://jrdiq7bdxada" path="res://Assets/player.png" id="1_xrj1m"]
-[ext_resource type="Script" path="res://scenes/player.gd" id="2_2qeww"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_2qeww"]
 [ext_resource type="Texture2D" uid="uid://bxiuwxx2ortm5" path="res://Assets/puckSprite.png" id="2_10uek"]
 [ext_resource type="Texture2D" uid="uid://dtml5blmi1ca3" path="res://Assets/arrow.png" id="3_7tdh7"]
 [ext_resource type="Script" path="res://scripts/arrow.gd" id="3_xdc5d"]
@@ -76,6 +76,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="slider" type="HSlider" parent="CanvasLayer/powerBar"]
 layout_mode = 1

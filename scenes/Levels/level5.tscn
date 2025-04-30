@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://csgopm3hs2pga"]
+
+[ext_resource type="PackedScene" uid="uid://cbf4hd14a8td4" path="res://scenes/ICEWITHWALLS.tscn" id="1_jcu02"]
+[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="2_wfd8h"]
+[ext_resource type="PackedScene" uid="uid://cq0fmk46jdwu" path="res://scenes/moveableEnemyHOR.tscn" id="3_tacyu"]
+[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="4_ebeky"]
+[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/WALL.tscn" id="5_7tyd8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_jcu02")]
+position = Vector2(716, 653)
+
+[node name="Node2D9" parent="." instance=ExtResource("1_jcu02")]
+position = Vector2(716, 653)
+
+[node name="puck" parent="." instance=ExtResource("2_wfd8h")]
+position = Vector2(1878, 1431)
+
+[node name="Node2D2" parent="." instance=ExtResource("3_tacyu")]
+position = Vector2(1881, 1408)
+scale = Vector2(20, 20)
+
+[node name="Node2D3" parent="." instance=ExtResource("3_tacyu")]
+position = Vector2(1797, 1408)
+scale = Vector2(20, 20)
+
+[node name="Node2D4" parent="." instance=ExtResource("3_tacyu")]
+position = Vector2(1881, 1333)
+scale = Vector2(20, 20)
+
+[node name="Node2D5" parent="." instance=ExtResource("3_tacyu")]
+position = Vector2(1797, 1333)
+scale = Vector2(20, 20)
+
+[node name="Node2D6" parent="." instance=ExtResource("3_tacyu")]
+position = Vector2(1881, 1249)
+scale = Vector2(20, 20)
+
+[node name="Node2D7" parent="." instance=ExtResource("3_tacyu")]
+position = Vector2(1797, 1249)
+scale = Vector2(20, 20)
+
+[node name="Node2D8" parent="." instance=ExtResource("4_ebeky")]
+position = Vector2(1842, 1116)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("5_7tyd8")]
+position = Vector2(1731, 1376)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("5_7tyd8")]
+position = Vector2(1731, 1197)
+scale = Vector2(5, 6)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("5_7tyd8")]
+position = Vector2(1948, 1380)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("5_7tyd8")]
+position = Vector2(1948, 1201)
+scale = Vector2(5, 6)

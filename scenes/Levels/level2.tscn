@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://duejm5jfmj253"]
 
-[ext_resource type="PackedScene" uid="uid://cc73qawyh2n3x" path="res://scenes/Levels/level4.tscn" id="1_f5vge"]
+[ext_resource type="PackedScene" uid="uid://0m4swvnstdrn" path="res://scenes/IceFloorTileMap.tscn" id="1_w34bc"]
 [ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="2_63m4k"]
 [ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/WALL.tscn" id="3_hxh3w"]
 [ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="4_a7bv3"]
@@ -9,9 +9,8 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="IceFloorTileMap" parent="." instance=ExtResource("1_f5vge")]
-position = Vector2(720, 1249)
-scale = Vector2(1.3, 1.3)
+[node name="IceFloorTileMap" parent="." instance=ExtResource("1_w34bc")]
+position = Vector2(715, 1273)
 
 [node name="puck" parent="." instance=ExtResource("2_63m4k")]
 position = Vector2(778, 1562)
