@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cou83tw2bc6vl"]
 
 [ext_resource type="Script" path="res://scripts/moveEnemyVERT.gd" id="1_og84s"]
-[ext_resource type="Texture2D" uid="uid://6vnrwd6j808a" path="res://Assets/enemy.png" id="2_3oecs"]
+[ext_resource type="Texture2D" uid="uid://brjto7jsuprkt" path="res://Assets/enemy.png" id="2_3oecs"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="2_l4dy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iumyy"]

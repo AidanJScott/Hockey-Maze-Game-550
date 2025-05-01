@@ -12,7 +12,11 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("puck"):
 		print("🥅 GOAL by:", body.name)
 		Global.score = 0
-		yippe.play() # Wait a moment before reloading
-
+		yippe.play()
+		var game_over_ui = preload("res://scenes/gameOverPopup.tscn").instantiate()
+		get_tree().root.add_child(game_over_ui)
+		game_over_ui.show_message("🎉 You Win!")
+		get_tree().paused = true
+		
 func _on_goal_timer_timeout() -> void:
 	get_tree().reload_current_scene()

@@ -31,12 +31,19 @@ anchor_right = 0.74
 anchor_bottom = 0.754
 offset_left = -20.304
 offset_right = -20.304
-offset_bottom = -0.178009
+offset_bottom = -0.177979
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_yhjyg")
 alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 60
+text = "Main Menu"
 
 [node name="LevelSelectorButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -57,7 +64,7 @@ flat = false
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "quit"
+text = "Quit"
 
 [node name="SettingsPopup" type="AcceptDialog" parent="."]
 title = "Sound"

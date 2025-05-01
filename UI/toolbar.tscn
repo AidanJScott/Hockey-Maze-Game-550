@@ -12,6 +12,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Back"
 
+[node name="LevelNameInput" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Name"
+
 [node name="SaveButton" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -41,13 +46,3 @@ text = "Grid"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Test"
-
-[node name="InfoButton" type="Button" parent="."]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Info"
-
-[node name="LevelNameInput" type="LineEdit" parent="."]
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "Name"

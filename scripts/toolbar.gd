@@ -39,7 +39,6 @@ func _ready():
 	redo_button.pressed.connect(Callable(self, "_on_redo_pressed"))
 	clear_button.pressed.connect(Callable(self, "_on_clear_pressed"))
 	test_button.pressed.connect(Callable(self, "_on_test_pressed"))
-	info_button.pressed.connect(Callable(self, "_on_info_pressed"))
 
 	grid_toggle.toggled.connect(_on_grid_toggled)
 	level_name_input.text_changed.connect(_on_level_name_changed)
