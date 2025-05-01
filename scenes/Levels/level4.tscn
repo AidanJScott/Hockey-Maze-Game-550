@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=4 uid="uid://cc73qawyh2n3x"]
 
 [ext_resource type="Texture2D" uid="uid://r41qsnwig0wa" path="res://Assets/IceTileAlt.png" id="1_ri4o4"]
-[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/WALL.tscn" id="2_sjt6h"]
-[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="3_inlr3"]
-[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="4_mil14"]
+[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/premadeWALL.tscn" id="2_sjt6h"]
+[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/gamePuck.tscn" id="3_inlr3"]
+[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/gameGoal.tscn" id="4_mil14"]
 [ext_resource type="PackedScene" uid="uid://cou83tw2bc6vl" path="res://scenes/moveableEnemyVERT.tscn" id="5_thbeb"]
 [ext_resource type="PackedScene" uid="uid://cq0fmk46jdwu" path="res://scenes/moveableEnemyHOR.tscn" id="6_qge7g"]
 

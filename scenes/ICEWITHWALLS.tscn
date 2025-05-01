@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbf4hd14a8td4"]
 
 [ext_resource type="PackedScene" uid="uid://0m4swvnstdrn" path="res://scenes/IceFloorTileMap.tscn" id="1_bkhxc"]
-[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/WALL.tscn" id="2_by0m2"]
+[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/premadeWALL.tscn" id="2_by0m2"]
 
 [node name="Node2D" type="Node2D"]
 

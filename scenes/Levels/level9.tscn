@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bufpcvbaiovlh"]
 
 [ext_resource type="PackedScene" uid="uid://cbf4hd14a8td4" path="res://scenes/ICEWITHWALLS.tscn" id="1_51awh"]
-[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/WALL.tscn" id="2_dy0s7"]
-[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="3_5nh66"]
-[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="4_j0ml4"]
+[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/premadeWALL.tscn" id="2_dy0s7"]
+[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/gameGoal.tscn" id="3_5nh66"]
+[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/gamePuck.tscn" id="4_j0ml4"]
 
 [node name="Node2D" type="Node2D"]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://duejm5jfmj253"]
 
 [ext_resource type="PackedScene" uid="uid://0m4swvnstdrn" path="res://scenes/IceFloorTileMap.tscn" id="1_w34bc"]
-[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="2_63m4k"]
-[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/WALL.tscn" id="3_hxh3w"]
-[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="4_a7bv3"]
+[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/gamePuck.tscn" id="2_63m4k"]
+[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/premadeWALL.tscn" id="3_hxh3w"]
+[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/gameGoal.tscn" id="4_a7bv3"]
 [ext_resource type="PackedScene" uid="uid://cq0fmk46jdwu" path="res://scenes/moveableEnemyHOR.tscn" id="5_ao6e4"]
 [ext_resource type="PackedScene" uid="uid://cou83tw2bc6vl" path="res://scenes/moveableEnemyVERT.tscn" id="6_mqinn"]
 
