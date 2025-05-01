@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.3", "Mobile")
 
 PuckVelocity="*res://puck_velocity.gd"
 Settings="*res://scripts/settings.gd"
+Global="*res://Global.gd"
 
 [display]
 

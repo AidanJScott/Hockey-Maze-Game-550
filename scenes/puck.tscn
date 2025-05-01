@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://baplx7uprs8yt"]
+[gd_scene load_steps=8 format=3 uid="uid://baplx7uprs8yt"]
 
 [ext_resource type="Script" path="res://scripts/puckScript.gd" id="1_5dupl"]
 [ext_resource type="Texture2D" uid="uid://bxiuwxx2ortm5" path="res://Assets/puckSprite.png" id="2_10uek"]
 [ext_resource type="Texture2D" uid="uid://dtml5blmi1ca3" path="res://Assets/arrow.png" id="3_7tdh7"]
 [ext_resource type="Script" path="res://scripts/arrow.gd" id="3_xdc5d"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="5_dblwb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alv8x"]
 rough = true
@@ -59,4 +60,23 @@ texture = ExtResource("2_10uek")
 
 [node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
 
+[node name="counter display" type="Label" parent="RigidBody2D/Camera2D"]
+offset_left = -16.0
+offset_top = 10.0
+offset_right = 17.0
+offset_bottom = 33.0
+script = ExtResource("5_dblwb")
+
+[node name="hitTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.8
+
+[node name="soundFX" type="AudioStreamPlayer2D" parent="."]
+
+[node name="levelMusic" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="value_changed" from="CanvasLayer/powerBar/slider" to="RigidBody2D" method="sliderChanged"]
+[connection signal="timeout" from="hitTimer" to="RigidBody2D" method="_on_hit_timer_timeout"]
+[connection signal="timeout" from="Timer" to="RigidBody2D" method="_on_timer_timeout"]
