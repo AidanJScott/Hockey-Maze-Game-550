@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 PuckVelocity="*res://puck_velocity.gd"
 Settings="*res://scripts/settings.gd"
 PauseMenuManager="*res://scripts/PauseMenuManager.gd"
+Global="*res://Global.gd"
 
 [display]
 

@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iumyy"]
 size = Vector2(2.02, 2.04)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 scale = Vector2(30, 30)
 script = ExtResource("1_umvas")
 
