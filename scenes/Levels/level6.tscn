@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxgvft5102w5f"]
+
+[ext_resource type="PackedScene" path="res://scenes/ICEWITHWALLS.tscn" id="1_afcro"]
+[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="2_farnt"]
+[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/premadeWALL.tscn" id="3_eqy4p"]
+[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="4_uww77"]
+[ext_resource type="PackedScene" path="res://scenes/gameEnemy.tscn" id="5_fs3w5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_afcro")]
+position = Vector2(1561, 789)
+
+[node name="puck" parent="." instance=ExtResource("2_farnt")]
+position = Vector2(2975, 1240)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_eqy4p")]
+position = Vector2(2551, 1517)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("3_eqy4p")]
+position = Vector2(2637, 1522)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("3_eqy4p")]
+position = Vector2(2858, 1443)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("3_eqy4p")]
+position = Vector2(2595, 1442)
+rotation = 1.5708
+scale = Vector2(5, 3)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("3_eqy4p")]
+position = Vector2(2945, 1320)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("3_eqy4p")]
+position = Vector2(2945, 1383)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_eqy4p")]
+position = Vector2(2550, 1427)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_eqy4p")]
+position = Vector2(2511, 1428)
+rotation = 1.5708
+scale = Vector2(5, 2)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("3_eqy4p")]
+position = Vector2(2597, 1347)
+rotation = 1.5708
+scale = Vector2(5, 2)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_eqy4p")]
+position = Vector2(2421, 1428)
+rotation = 1.5708
+scale = Vector2(5, 2)
+
+[node name="Node2D2" parent="." instance=ExtResource("4_uww77")]
+position = Vector2(2467, 1550)
+rotation = 3.14159
+
+[node name="Node2D3" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2507, 1415)
+scale = Vector2(15, 15)
+
+[node name="Node2D11" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2507, 1415)
+scale = Vector2(15, 15)
+
+[node name="Node2D12" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2861, 1428)
+scale = Vector2(15, 15)
+
+[node name="Node2D13" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2810, 1428)
+scale = Vector2(15, 15)
+
+[node name="Node2D5" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2676, 1593)
+scale = Vector2(15, 15)
+
+[node name="Node2D6" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2676, 1544)
+scale = Vector2(15, 15)
+
+[node name="Node2D7" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2677, 1495)
+scale = Vector2(15, 15)
+
+[node name="Node2D8" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2901, 1379)
+scale = Vector2(15, 15)
+
+[node name="Node2D9" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2901, 1330)
+scale = Vector2(15, 15)
+
+[node name="Node2D10" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2902, 1281)
+scale = Vector2(15, 15)
+
+[node name="Node2D4" parent="." instance=ExtResource("5_fs3w5")]
+position = Vector2(2436, 1415)
+scale = Vector2(15, 15)

@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="2_uvm8n"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1evec"]
-load_path = "res://.godot/imported/enemySpriteTemp.png-dd60e2ee5728e8d97642ccbd834307e2.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb8ol"]
 size = Vector2(2.5, 2.5)

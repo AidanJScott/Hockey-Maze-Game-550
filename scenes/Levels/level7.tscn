@@ -1,0 +1,144 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi8yylv2ajyxq"]
+
+[ext_resource type="PackedScene" path="res://scenes/ICEWITHWALLS.tscn" id="1_p84kv"]
+[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="2_i5xuq"]
+[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/premadeWALL.tscn" id="2_o6ohh"]
+[ext_resource type="PackedScene" path="res://scenes/gameEnemy.tscn" id="4_rwg1i"]
+[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="5_idkg6"]
+
+[node name="Node2D" instance=ExtResource("1_p84kv")]
+
+[node name="StaticBody2D20" parent="." index="2" instance=ExtResource("2_o6ohh")]
+position = Vector2(1381, 619)
+scale = Vector2(5, 3)
+
+[node name="StaticBody2D24" parent="." index="3" instance=ExtResource("2_o6ohh")]
+position = Vector2(1382, 651)
+scale = Vector2(5, 3)
+
+[node name="StaticBody2D21" parent="." index="4" instance=ExtResource("2_o6ohh")]
+position = Vector2(1381, 503)
+scale = Vector2(5, 4)
+
+[node name="StaticBody2D22" parent="." index="5" instance=ExtResource("2_o6ohh")]
+position = Vector2(955, 513)
+scale = Vector2(5, 4)
+
+[node name="StaticBody2D23" parent="." index="6" instance=ExtResource("2_o6ohh")]
+position = Vector2(954, 689)
+scale = Vector2(5, 2)
+
+[node name="puck" parent="." index="20" instance=ExtResource("2_i5xuq")]
+position = Vector2(1153, 786)
+
+[node name="StaticBody2D15" parent="." index="21" instance=ExtResource("2_o6ohh")]
+position = Vector2(1078, 712)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D18" parent="." index="22" instance=ExtResource("2_o6ohh")]
+position = Vector2(1078, 712)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D19" parent="." index="23" instance=ExtResource("2_o6ohh")]
+position = Vector2(1011, 711)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D16" parent="." index="24" instance=ExtResource("2_o6ohh")]
+position = Vector2(1214, 712)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D17" parent="." index="25" instance=ExtResource("2_o6ohh")]
+position = Vector2(1301, 712)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="Node2D" parent="." index="26" instance=ExtResource("4_rwg1i")]
+position = Vector2(865, 806)
+scale = Vector2(15, 15)
+
+[node name="Node2D2" parent="." index="27" instance=ExtResource("4_rwg1i")]
+position = Vector2(909, 587)
+scale = Vector2(15, 15)
+
+[node name="Node2D6" parent="." index="28" instance=ExtResource("4_rwg1i")]
+position = Vector2(1080, 573)
+scale = Vector2(15, 15)
+
+[node name="Node2D9" parent="." index="29" instance=ExtResource("4_rwg1i")]
+position = Vector2(1140, 698)
+scale = Vector2(15, 15)
+
+[node name="Node2D10" parent="." index="30" instance=ExtResource("4_rwg1i")]
+position = Vector2(1213, 694)
+scale = Vector2(15, 15)
+
+[node name="Node2D11" parent="." index="31" instance=ExtResource("4_rwg1i")]
+position = Vector2(1278, 699)
+scale = Vector2(15, 15)
+
+[node name="Node2D12" parent="." index="32" instance=ExtResource("4_rwg1i")]
+position = Vector2(1329, 698)
+scale = Vector2(15, 15)
+
+[node name="Node2D13" parent="." index="33" instance=ExtResource("4_rwg1i")]
+position = Vector2(1415, 738)
+scale = Vector2(10, 10)
+
+[node name="Node2D22" parent="." index="34" instance=ExtResource("4_rwg1i")]
+position = Vector2(1471, 740)
+scale = Vector2(10, 10)
+
+[node name="Node2D14" parent="." index="35" instance=ExtResource("4_rwg1i")]
+position = Vector2(1415, 693)
+scale = Vector2(10, 10)
+
+[node name="Node2D21" parent="." index="36" instance=ExtResource("4_rwg1i")]
+position = Vector2(1472, 702)
+scale = Vector2(10, 10)
+
+[node name="Node2D15" parent="." index="37" instance=ExtResource("4_rwg1i")]
+position = Vector2(1414, 645)
+scale = Vector2(10, 10)
+
+[node name="Node2D20" parent="." index="38" instance=ExtResource("4_rwg1i")]
+position = Vector2(1471, 660)
+scale = Vector2(10, 10)
+
+[node name="Node2D16" parent="." index="39" instance=ExtResource("4_rwg1i")]
+position = Vector2(1413, 606)
+scale = Vector2(10, 10)
+
+[node name="Node2D19" parent="." index="40" instance=ExtResource("4_rwg1i")]
+position = Vector2(1471, 608)
+scale = Vector2(10, 10)
+
+[node name="Node2D17" parent="." index="41" instance=ExtResource("4_rwg1i")]
+position = Vector2(1413, 557)
+scale = Vector2(10, 10)
+
+[node name="Node2D18" parent="." index="42" instance=ExtResource("4_rwg1i")]
+position = Vector2(1468, 555)
+scale = Vector2(10, 10)
+
+[node name="Node2D7" parent="." index="43" instance=ExtResource("4_rwg1i")]
+position = Vector2(1146, 571)
+scale = Vector2(15, 15)
+
+[node name="Node2D8" parent="." index="44" instance=ExtResource("4_rwg1i")]
+position = Vector2(1216, 531)
+scale = Vector2(15, 15)
+
+[node name="Node2D3" parent="." index="45" instance=ExtResource("4_rwg1i")]
+position = Vector2(868, 588)
+scale = Vector2(15, 15)
+
+[node name="Node2D4" parent="." index="46" instance=ExtResource("5_idkg6")]
+position = Vector2(1442, 459)
+
+[node name="Node2D5" parent="." index="47" instance=ExtResource("5_idkg6")]
+position = Vector2(1318, 547)
+rotation = 0.785398

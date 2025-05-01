@@ -4,12 +4,10 @@ const SliderFactor = 7
 const dragCoefficient = 0.01
 
 var is_editor_mode := false
-
 func _ready() -> void:
-	# Only applies if not in editor mode
 	if not is_editor_mode:
 		collision_layer = 1
-		collision_mask = 2
+		collision_mask = 2 | 3 | 4  # Detect enemies, walls, and goals
 		add_to_group("puck")
   # "I want to detect Layer 2 (enemies)"
 
