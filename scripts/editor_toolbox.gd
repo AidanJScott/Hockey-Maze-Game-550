@@ -12,11 +12,11 @@ var current_mode: Mode = Mode.SELECT
 @onready var delete_button = $DeleteButton
 @onready var select_button = $SelectButton
 
-# Update these to match actual scene names/paths
 var entity_scene_paths = {
 	"WALL": "res://scenes/WALL.tscn",
 	"GOAL": "res://scenes/goal.tscn",
-	"ENEMY": "res://scenes/enemy.tscn"
+	"ENEMY": "res://scenes/enemy.tscn",
+	"PUCK": "res://scenes/puck_editor.tscn"  # ← Added puck here
 }
 
 func _ready():
@@ -36,7 +36,6 @@ func _on_add_pressed():
 	entity_dropdown.visible = true
 	_update_entity_dropdown()
 	entity_dropdown.select(-1)
-
 
 func _on_edit_pressed():
 	current_mode = Mode.EDIT

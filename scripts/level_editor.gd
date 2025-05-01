@@ -43,7 +43,7 @@ func _ready():
 	editor_toolbox.mode_changed.connect(_on_mode_changed)
 
 	object_container.z_index = -1
-	draw_overlay.visible = is_grid_enabled
+	draw_overlay.z_index = 1000
 	draw_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	draw_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
@@ -98,7 +98,7 @@ func _on_entity_selected(scene_path: String):
 	var key_name = get_entity_key_from_path(scene_path)
 	if entity_scales.has(key_name):
 		preview_instance.scale = entity_scales[key_name]
-
+		
 	coordinates_display.set_placing_type(key_name)
 	preview_instance.modulate = Color(1, 1, 1, 1)
 	object_container.add_child(preview_instance)
@@ -112,8 +112,7 @@ func _on_mode_changed(mode: String):
 		preview_instance = null
 
 func _process(delta):
-	if draw_overlay.visible:
-		draw_overlay.queue_redraw()
+	draw_overlay.queue_redraw()
 
 	var mouse_pos = get_global_mouse_position()
 
@@ -121,7 +120,9 @@ func _process(delta):
 		var new_pos = mouse_pos + drag_offset
 		if is_grid_enabled:
 			new_pos = Vector2(Vector2i(new_pos / GRID_SIZE) * GRID_SIZE) - drag_offset
-		preview_instance.global_position = new_pos
+		# Clamp the ghost object to the drop area too
+		preview_instance.global_position = clamp_position_to_drop_area(new_pos, preview_instance)
+
 
 	elif is_dragging and dragged_node:
 		if not is_mouse_inside_drop_area():
@@ -130,7 +131,7 @@ func _process(delta):
 		var new_pos = mouse_pos + drag_offset
 		if is_grid_enabled:
 			new_pos = Vector2(Vector2i(new_pos / GRID_SIZE) * GRID_SIZE)
-		dragged_node.global_position = new_pos
+		dragged_node.global_position = clamp_position_to_drop_area(new_pos, dragged_node)
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -138,13 +139,44 @@ func _input(event):
 		if event.pressed:
 			if current_mode == "add" and drop_area.get_global_rect().has_point(mouse_pos):
 				if preview_instance and current_entity_scene:
-					var placed = current_entity_scene.instantiate()
-					var pos = preview_instance.global_position
-					if is_grid_enabled:
-						pos = Vector2(Vector2i(pos / GRID_SIZE) * GRID_SIZE)
-					placed.global_position = pos
-
 					var key_name = get_entity_key_from_path(current_entity_scene.resource_path)
+
+					# Only allow one puck
+					if key_name == "PUCK":
+						for child in object_container.get_children():
+							if child.is_in_group("puck"):
+								print("⚠️ A puck is already placed. Skipping.")
+								return
+
+					var placed = current_entity_scene.instantiate()
+					placed.global_position = preview_instance.global_position
+
+					if key_name == "PUCK":
+						print("🧊 Setting up puck in editor mode...")
+
+						if placed.has_method("set_editor_mode"):
+							placed.call("set_editor_mode", true)
+						else:
+							print("⚠️ Puck node has no 'set_editor_mode' method!")
+
+						if placed.has_node("RigidBody2D"):
+							var rigidbody = placed.get_node("RigidBody2D") as RigidBody2D
+							if rigidbody.has_method("set_physics_process"):
+								rigidbody.set_physics_process(false)
+							if rigidbody.has_method("set_process"):
+								rigidbody.set_process(false)
+							rigidbody.physics_body_mode = PhysicsServer2D.BODY_MODE_STATIC
+							rigidbody.freeze = true
+							rigidbody.sleeping = true
+							rigidbody.linear_velocity = Vector2.ZERO
+							rigidbody.angular_velocity = 0.0
+
+						else:
+							print("❌ Puck instance missing RigidBody2D")
+
+					if is_grid_enabled:
+						placed.global_position = Vector2(Vector2i(placed.global_position / GRID_SIZE) * GRID_SIZE)
+
 					if entity_scales.has(key_name):
 						placed.scale = entity_scales[key_name]
 
@@ -163,11 +195,13 @@ func _input(event):
 						"node": placed
 					})
 					redo_stack.clear()
+					print("✅ Entity placed:", key_name)
 			elif current_mode in ["select", "edit", "delete"]:
 				is_dragging = false
 				dragged_node = null
 
 				for child in object_container.get_children():
+					print("🔍 Checking child:", child.name)
 					if child is Node2D or child is StaticBody2D:
 						var shape_nodes = child.get_tree().get_nodes_in_group("collision_shapes")
 						for shape_node in shape_nodes:
@@ -186,6 +220,7 @@ func _input(event):
 								hit = local_mouse_pos.length() <= shape.radius
 
 							if hit:
+								print("🎯 Hit:", child.name)
 								if current_mode == "delete":
 									child.queue_free()
 									existing_entities.remove_entity(child)
@@ -202,9 +237,10 @@ func _input(event):
 				if is_grid_enabled and dragged_node:
 					var pos = dragged_node.global_position
 					pos = Vector2(Vector2i(pos / GRID_SIZE) * GRID_SIZE)
-					dragged_node.global_position = pos
+					dragged_node.global_position = clamp_position_to_drop_area(pos, dragged_node)
 				is_dragging = false
 				dragged_node = null
+
 
 func undo_last():
 	if undo_stack.size() > 0:
@@ -237,6 +273,8 @@ func clear_level():
 
 func get_entity_key_from_path(path: String) -> String:
 	path = path.to_lower()
+	if "puck" in path:
+		return "PUCK"
 	if "lowqualitywall" in path or "wall" in path:
 		return "WALL"
 	if "goal" in path:
@@ -300,3 +338,25 @@ func load_level(name: String):
 
 			object_container.add_child(instance)
 			existing_entities.add_entity(instance)
+
+func clamp_position_to_drop_area(pos: Vector2, node: Node2D) -> Vector2:
+	var bounds = drop_area.get_global_rect()
+
+	var extents = Vector2(0, 0)
+	var shapes = node.get_tree().get_nodes_in_group("collision_shapes")
+
+	for shape_node in shapes:
+		if shape_node is CollisionShape2D and shape_node.shape:
+			var shape = shape_node.shape
+			if shape is RectangleShape2D:
+				var size = shape.size * node.scale
+				extents = size / 2.0
+			elif shape is CircleShape2D:
+				var r = shape.radius * max(node.scale.x, node.scale.y)
+				extents = Vector2(r, r)
+
+	# Clamp the new position, keeping the full shape inside the bounds
+	pos.x = clamp(pos.x, bounds.position.x + extents.x, bounds.end.x - extents.x)
+	pos.y = clamp(pos.y, bounds.position.y + extents.y, bounds.end.y - extents.y)
+
+	return pos

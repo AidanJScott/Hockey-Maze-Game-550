@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://cs6jyuopgaq3l"]
+
+[ext_resource type="Script" path="res://scripts/puckScript.gd" id="1_6yjl4"]
+[ext_resource type="Script" path="res://scripts/puck_editor.gd" id="1_dh4y8"]
+[ext_resource type="Texture2D" uid="uid://dtml5blmi1ca3" path="res://Assets/arrow.png" id="2_s142c"]
+[ext_resource type="Script" path="res://scripts/arrow.gd" id="3_a4lus"]
+[ext_resource type="Texture2D" uid="uid://bxiuwxx2ortm5" path="res://Assets/puckSprite.png" id="4_u1g6g"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alv8x"]
+rough = true
+bounce = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcpbe"]
+
+[node name="puck" type="Node2D" groups=["puck"]]
+script = ExtResource("1_dh4y8")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 3
+physics_material_override = SubResource("PhysicsMaterial_alv8x")
+gravity_scale = 0.0
+lock_rotation = true
+freeze_mode = 1
+script = ExtResource("1_6yjl4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("2_s142c")
+script = ExtResource("3_a4lus")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(2.38419e-07, -4.17233e-07)
+scale = Vector2(3, 3)
+texture = ExtResource("4_u1g6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" groups=["collision_shapes"]]
+shape = SubResource("RectangleShape2D_kcpbe")

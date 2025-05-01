@@ -17,11 +17,9 @@ texture = ExtResource("1_g73y5")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["collision_shapes"]]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wvrhg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wvrhg")

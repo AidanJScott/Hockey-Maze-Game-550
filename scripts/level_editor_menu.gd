@@ -6,6 +6,7 @@ extends Control
 @onready var new_button = $VBoxContainer/HBoxContainer/NewLevelButton
 @onready var delete_button = $VBoxContainer/HBoxContainer/DeleteButton
 @onready var back_button = $VBoxContainer/HBoxContainer/BackButton
+@onready var play_button = $VBoxContainer/HBoxContainer/PlayButton
 
 signal level_selected(level_name: String)
 
@@ -14,6 +15,8 @@ func _ready():
 	load_button.pressed.connect(_on_load_pressed)
 	new_button.pressed.connect(_on_new_level_pressed)
 	back_button.pressed.connect(_on_back_pressed)
+	delete_button.pressed.connect(_on_delete_pressed)
+	play_button.pressed.connect(_on_play_pressed)
 
 func populate_level_list():
 	level_list.clear()
@@ -48,15 +51,28 @@ func _on_delete_pressed():
 		var selected_file = level_list.get_item_text(level_list.get_selected_items()[0])
 		var full_path = "user://levels/" + selected_file
 		var dir = DirAccess.open("user://levels")
+
 		if dir and dir.file_exists(selected_file):
 			var error = dir.remove(selected_file)
 			if error == OK:
 				print("Deleted level:", selected_file)
 			else:
 				print("Failed to delete:", selected_file, "Error code:", error)
-			populate_level_list()
+			
+			populate_level_list()  # Refresh the list view
+		else:
+			print("File does not exist:", full_path)
 	else:
-		print("No level selected to delete")
+		print("No level selected to delete.")
+
 		
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://scenes/startScreen.tscn")
+	
+func _on_play_pressed():
+	if level_list.get_selected_items().size() > 0:
+		var selected_file = level_list.get_item_text(level_list.get_selected_items()[0])
+		LevelEditorLoader.selected_level_name = selected_file.get_basename()
+		get_tree().change_scene_to_file("res://scenes/gameplay_scene.tscn")
+	else:
+		print("No level selected to play")

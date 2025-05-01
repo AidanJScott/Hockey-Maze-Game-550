@@ -1,36 +1,34 @@
 extends RigidBody2D
+
 const SliderFactor = 7
 const dragCoefficient = 0.01
 
+var is_editor_mode := false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var sliderValue = 0
+	if is_editor_mode:
+		self.freeze = true
+		self.set_process(false)
+		self.set_physics_process(false)
+	else:
+		self.freeze = false
+		self.set_process(true)
+		self.set_physics_process(true)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# Assuming 'velocity' is a Vector2 representing the object's velocity
-	var dragForce = -self.get_linear_velocity() * dragCoefficient # drag_coefficient is a value between 0 and 1
-	# Apply the drag force
-	apply_central_impulse(dragForce)
+	if is_editor_mode:
+		return
+	var drag_force = -self.linear_velocity * dragCoefficient
+	apply_central_impulse(drag_force)
 
 func _input(event: InputEvent) -> void:
-	# On spacebar clicked
+	if is_editor_mode:
+		return
 	if event.is_action_pressed("ui_select"):
-		# get the position of the mouse and the position of the puck, 
-		# find the difference to get a vector relative to the puck
-		var mouseVector = get_global_mouse_position()
-		var puckDirection = mouseVector - self.global_position
-		
-		# normalize the vector to make mouse distance from the puck have no effect
-		var unitPuckDirection = puckDirection.normalized()
-		
-		# multiply the normalized vector by the value on the slider 
-		# and apply the force to the puck
-		unitPuckDirection *= Vector2(PuckVelocity.puckVelocity * SliderFactor, PuckVelocity.puckVelocity * SliderFactor)
-		apply_impulse(unitPuckDirection)
-
+		var mouse_vector = get_global_mouse_position()
+		var puck_direction = mouse_vector - self.global_position
+		var impulse = puck_direction.normalized() * (PuckVelocity.puckVelocity * SliderFactor)
+		apply_impulse(impulse)
 
 func sliderChanged(value: float) -> void:
 	PuckVelocity.puckVelocity = value

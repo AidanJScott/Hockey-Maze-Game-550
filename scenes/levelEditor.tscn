@@ -69,6 +69,7 @@ metadata/_edit_use_anchors_ = true
 layer = 0
 
 [node name="ObjectContainer" type="Node2D" parent="WorkspaceWrapper"]
+z_index = -4
 
 [node name="SelectionBox" parent="." instance=ExtResource("2_oofnb")]
 custom_minimum_size = Vector2(100, 0)
@@ -97,7 +98,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="DrawOverlay" type="Control" parent="DropArea"]
-z_index = -3
+z_index = 100
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
