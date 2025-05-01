@@ -20,9 +20,10 @@ var is_grid_enabled: bool = false
 const GRID_SIZE := 32
 
 var entity_scales = {
-	"WALL": Vector2(1, 1),
+	"WALL": Vector2(2, 2),
 	"GOAL": Vector2(0.6, 0.6),
-	"ENEMY": Vector2(5, 5)
+	"ENEMY": Vector2(10, 10),
+	"PUCK": Vector2(0.5, 0.5)
 }
 
 var undo_stack: Array = []
@@ -47,10 +48,9 @@ func _ready():
 	draw_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	draw_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
-	# ✅ Check if we're supposed to load an existing level
 	var name = LevelEditorLoader.selected_level_name
 	if name != "":
-		toolbar.level_name_input.text = name.get_basename()  # optional: show the name
+		toolbar.level_name_input.text = name.get_basename()
 		load_level(name.get_basename())
 
 func _on_toolbar_action(action: String):
@@ -120,10 +120,7 @@ func _process(delta):
 		var new_pos = mouse_pos + drag_offset
 		if is_grid_enabled:
 			new_pos = Vector2(Vector2i(new_pos / GRID_SIZE) * GRID_SIZE) - drag_offset
-		# Clamp the ghost object to the drop area too
 		preview_instance.global_position = clamp_position_to_drop_area(new_pos, preview_instance)
-
-
 	elif is_dragging and dragged_node:
 		if not is_mouse_inside_drop_area():
 			return
@@ -141,9 +138,10 @@ func _input(event):
 				if preview_instance and current_entity_scene:
 					var key_name = get_entity_key_from_path(current_entity_scene.resource_path)
 
-					# Only allow one puck
 					if key_name == "PUCK":
 						for child in object_container.get_children():
+							if child == preview_instance:
+								continue  # Ignore the preview
 							if child.is_in_group("puck"):
 								print("⚠️ A puck is already placed. Skipping.")
 								return
@@ -152,27 +150,7 @@ func _input(event):
 					placed.global_position = preview_instance.global_position
 
 					if key_name == "PUCK":
-						print("🧊 Setting up puck in editor mode...")
-
-						if placed.has_method("set_editor_mode"):
-							placed.call("set_editor_mode", true)
-						else:
-							print("⚠️ Puck node has no 'set_editor_mode' method!")
-
-						if placed.has_node("RigidBody2D"):
-							var rigidbody = placed.get_node("RigidBody2D") as RigidBody2D
-							if rigidbody.has_method("set_physics_process"):
-								rigidbody.set_physics_process(false)
-							if rigidbody.has_method("set_process"):
-								rigidbody.set_process(false)
-							rigidbody.physics_body_mode = PhysicsServer2D.BODY_MODE_STATIC
-							rigidbody.freeze = true
-							rigidbody.sleeping = true
-							rigidbody.linear_velocity = Vector2.ZERO
-							rigidbody.angular_velocity = 0.0
-
-						else:
-							print("❌ Puck instance missing RigidBody2D")
+						placed.add_to_group("puck")
 
 					if is_grid_enabled:
 						placed.global_position = Vector2(Vector2i(placed.global_position / GRID_SIZE) * GRID_SIZE)
@@ -241,7 +219,6 @@ func _input(event):
 				is_dragging = false
 				dragged_node = null
 
-
 func undo_last():
 	if undo_stack.size() > 0:
 		var last = undo_stack.pop_back()
@@ -293,8 +270,8 @@ func save_level(name: String):
 		if child is Node2D:
 			var data = {
 				"scene_path": child.scene_file_path,
-				"position": [child.global_position.x, child.global_position.y],  # Save as array
-				"scale": [child.scale.x, child.scale.y],  # Save as array
+				"position": [child.global_position.x, child.global_position.y],
+				"scale": [child.scale.x, child.scale.y],
 				"rotation": child.rotation
 			}
 			level_data["entities"].append(data)
@@ -326,8 +303,6 @@ func load_level(name: String):
 		var scene = load(entity["scene_path"])
 		if scene:
 			var instance = scene.instantiate()
-
-			# Convert from array back to Vector2
 			var pos = Vector2(entity["position"][0], entity["position"][1])
 			var scale = Vector2(entity["scale"][0], entity["scale"][1])
 			var rotation = float(entity["rotation"])
@@ -355,7 +330,6 @@ func clamp_position_to_drop_area(pos: Vector2, node: Node2D) -> Vector2:
 				var r = shape.radius * max(node.scale.x, node.scale.y)
 				extents = Vector2(r, r)
 
-	# Clamp the new position, keeping the full shape inside the bounds
 	pos.x = clamp(pos.x, bounds.position.x + extents.x, bounds.end.x - extents.x)
 	pos.y = clamp(pos.y, bounds.position.y + extents.y, bounds.end.y - extents.y)
 

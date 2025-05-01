@@ -1,18 +1,9 @@
 extends Node2D
 
-@onready var body := $RigidBody2D
-@onready var arrow := $RigidBody2D/Sprite2D2
-
 func _ready():
+	# You can optionally set visual indicators only when in editor
 	if Engine.is_editor_hint():
-		if body:
-			body.is_editor_mode = true
-			body.freeze = true
-		if arrow:
-			arrow.visible = false
+		modulate = Color(1, 1, 1, 1)  # Fully visible in editor
 	else:
-		if body:
-			body.is_editor_mode = false
-			body.freeze = false
-		if arrow:
-			arrow.visible = true
+		# This is where you'd enable puck logic in gameplay if needed
+		pass

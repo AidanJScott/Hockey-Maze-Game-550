@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cfl6ebq0am4rp"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="2_21t7c"]
-[ext_resource type="Texture2D" uid="uid://cifdulmddhqu3" path="res://Assets/enemySpriteCroppedFinal (2) (1).png" id="2_oetmo"]
+[ext_resource type="Texture2D" uid="uid://brjto7jsuprkt" path="res://Assets/enemy.png" id="2_o1ajf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb8ol"]
 size = Vector2(48, 48)
@@ -10,9 +10,9 @@ size = Vector2(48, 48)
 script = ExtResource("2_21t7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 7.45058e-08)
-scale = Vector2(1.014, 1)
-texture = ExtResource("2_oetmo")
+position = Vector2(-9.53674e-07, -1.43051e-06)
+scale = Vector2(3, 2.95858)
+texture = ExtResource("2_o1ajf")
 region_rect = Rect2(15, 13, 2, 2)
 
 [node name="Area2D" type="Area2D" parent="."]
