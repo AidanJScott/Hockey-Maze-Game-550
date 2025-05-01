@@ -6,14 +6,12 @@ const dragCoefficient = 0.01
 var is_editor_mode := false
 
 func _ready() -> void:
-	if is_editor_mode:
-		self.freeze = true
-		self.set_process(false)
-		self.set_physics_process(false)
-	else:
-		self.freeze = false
-		self.set_process(true)
-		self.set_physics_process(true)
+	# Only applies if not in editor mode
+	if not is_editor_mode:
+		collision_layer = 1
+		collision_mask = 2
+		add_to_group("puck")
+  # "I want to detect Layer 2 (enemies)"
 
 func _process(delta: float) -> void:
 	if is_editor_mode:

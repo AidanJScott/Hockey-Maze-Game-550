@@ -12,7 +12,7 @@ bounce = 0.5
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwvr7"]
 radius = 9.0
 
-[node name="puck" type="Node2D"]
+[node name="puck" type="Node2D" groups=["puck"]]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -38,7 +38,6 @@ tick_count = 50
 ticks_on_borders = true
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_alv8x")
 gravity_scale = 0.0
 lock_rotation = true

@@ -22,7 +22,7 @@ const GRID_SIZE := 32
 var entity_scales = {
 	"WALL": Vector2(2, 2),
 	"GOAL": Vector2(0.6, 0.6),
-	"ENEMY": Vector2(10, 10),
+	"ENEMY": Vector2(0.5, 0.5),
 	"PUCK": Vector2(0.5, 0.5)
 }
 

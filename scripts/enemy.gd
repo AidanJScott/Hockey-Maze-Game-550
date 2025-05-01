@@ -1,8 +1,10 @@
 extends Node2D
 
 @onready var timer = $timer
+@onready var body := $Area2D  # or $StaticBody2D if that’s what you're using
 
 func _on_body_entered(body: Node2D) -> void:
+	print("BODY ENTERED:", body)
 	print("you died lol")
 	#for kian/ej this is the command that reloads the scene
 	#Make this code take you to a exit/restart meny
@@ -15,5 +17,8 @@ func _ready():
 		print("Texture size:", $Sprite2D.texture.get_size())
 	print("Sprite position:", $Sprite2D.position)
 	print("Sprite scale:", $Sprite2D.scale)
-	$Sprite2D.scale = Vector2(1, 1)
-	scale = Vector2(1, 1)
+	body.collision_layer = 2
+	body.collision_mask = 1
+	# Optional debug print
+	print("Enemy collision layer/mask set")
+	
