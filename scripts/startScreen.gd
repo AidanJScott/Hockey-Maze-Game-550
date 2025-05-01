@@ -11,9 +11,8 @@ func _ready():
 	start_option_button.clear()
 	start_option_button.add_item("Click to start")  # index 0
 	for level in levels:
-		start_option_button.add_item(level["name"])  
-	start_option_button.add_item("Level Editor")      # index 2
-	start_option_button.add_item("Quit")           # index 3
+		start_option_button.add_item(level["name"])
+	start_option_button.add_item("Quit")
 
 	start_option_button.item_selected.connect(_on_option_selected)
 
@@ -29,7 +28,7 @@ func _on_option_selected(index):
 			print("Level path is missing!")
 
 	elif index == levels.size() + 1:
-		get_tree().change_scene_to_file("res://scenes/level_editor.tscn")
+		get_tree().change_scene_to_file("res://scenes/levelEditor.tscn")
 
 	elif index == levels.size() + 2:
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://scenes/levelEditorMenu.tscn")
