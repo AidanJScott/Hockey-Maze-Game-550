@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy8lqqchqcf55"]
+[gd_scene load_steps=7 format=3 uid="uid://dy8lqqchqcf55"]
 
 [ext_resource type="Script" path="res://scripts/startScreen.gd" id="1_e5827"]
+[ext_resource type="Texture2D" uid="uid://r41qsnwig0wa" path="res://Assets/IceTileAlt.png" id="2_mkrfr"]
 
 [sub_resource type="SystemFont" id="SystemFont_hoe3o"]
 msdf_size = 100
@@ -30,6 +31,19 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 theme = SubResource("Theme_skyba")
 script = ExtResource("1_e5827")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -956.0
+offset_top = -539.0
+offset_right = 954.0
+offset_bottom = 541.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mkrfr")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
