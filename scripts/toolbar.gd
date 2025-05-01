@@ -51,7 +51,6 @@ func _on_grid_toggled(pressed: bool):
 func _on_level_name_changed(new_name: String):
 	emit_signal("level_name_changed", new_name)
 
-# ⬇️ Add these below
 func _on_back_pressed():
 	emit_signal("action_requested", "back")
 

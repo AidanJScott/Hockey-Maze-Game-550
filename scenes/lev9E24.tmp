@@ -96,7 +96,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="DrawOverlay" type="Control" parent="DropArea"]
+[node name="DrawOverlay" type="Control" parent="."]
 z_index = -3
 layout_mode = 1
 anchors_preset = 15

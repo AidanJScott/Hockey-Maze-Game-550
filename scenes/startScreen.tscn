@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=6 format=3 uid="uid://dy8lqqchqcf55"]
-
 
 [ext_resource type="Script" path="res://scenes/startScreen.gd" id="1_e5827"]
 

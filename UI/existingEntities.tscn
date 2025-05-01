@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dugdu1fajc6jj"]
+[gd_scene load_steps=2 format=3 uid="uid://dugdu1fajc6jj"]
+
+[ext_resource type="Script" path="res://scripts/existing_entities.gd" id="1_1e7lo"]
 
 [node name="ExistingEntities" type="Panel"]
 anchors_preset = 15
@@ -8,14 +10,21 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_1e7lo")
 
-[node name="EntitiesInScene" type="Label" parent="."]
-layout_mode = 2
-offset_right = 640.0
-offset_bottom = 23.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="ItemList" type="ItemList" parent="."]
+[node name="Existing Entities" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-offset_top = 27.0
-offset_right = 640.0
-offset_bottom = 27.0
+text = "Existing Entities"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(150, 575)
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer/ScrollContainer"]
+custom_minimum_size = Vector2(150, 575)
+layout_mode = 2

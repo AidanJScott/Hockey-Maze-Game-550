@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ndutpaw3ipib"]
+[gd_scene load_steps=6 format=3 uid="uid://ndutpaw3ipib"]
 
-[ext_resource type="PackedScene" uid="uid://cv1joqspgg37g" path="res://scenes/scoreAREA.tscn" id="1_kt5ug"]
+[ext_resource type="PackedScene" uid="uid://dpigdubxm4rfm" path="res://scenes/scoreAREA.tscn" id="1_kt5ug"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bka2u"]
 size = Vector2(20, 122)
@@ -9,7 +9,10 @@ size = Vector2(20, 122)
 size = Vector2(200, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gg76"]
-size = Vector2(20, 126)
+size = Vector2(18, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qidtd"]
+size = Vector2(101, 62)
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,17 +20,24 @@ size = Vector2(20, 126)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Area2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/StaticBody2D" groups=["collision_shapes"]]
 position = Vector2(45, 0)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_bka2u")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D/StaticBody2D" groups=["collision_shapes"]]
 position = Vector2(0, -27)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_c2p3i")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
-position = Vector2(-45, 0)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D/StaticBody2D" groups=["collision_shapes"]]
+position = Vector2(-45.5, 0)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_2gg76")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/StaticBody2D2" groups=["collision_shapes"]]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_qidtd")
+disabled = true

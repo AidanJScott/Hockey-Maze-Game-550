@@ -33,7 +33,7 @@ func _on_settings_menu_selected(id):
 		settings_popup.popup_centered()
 
 func _on_level_editor_pressed():
-	get_tree().change_scene_to_file("res://scenes/level_editor.tscn")
+	get_tree().change_scene_to_file("res://scenes/levelEditor.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()

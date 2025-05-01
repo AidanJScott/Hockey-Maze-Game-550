@@ -34,6 +34,9 @@ func _on_add_pressed():
 	current_mode = Mode.ADD
 	emit_signal("mode_changed", "add")
 	entity_dropdown.visible = true
+	_update_entity_dropdown()
+	entity_dropdown.select(-1)
+
 
 func _on_edit_pressed():
 	current_mode = Mode.EDIT

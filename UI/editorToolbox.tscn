@@ -39,4 +39,4 @@ text = "Delete"
 [node name="SelectButton" type="Button" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Select"
+text = "Move"
