@@ -2,8 +2,9 @@ extends Control
 
 @onready var start_option_button = $CenterContainer/VBoxContainer/StartOptionButton
 
-var LevelData = preload("res://scripts/level_menu.gd").new()
+var LevelData = preload("res://scripts/level_data.gd").new()
 var levels = LevelData.get_levels()
+
 
 
 func _ready():

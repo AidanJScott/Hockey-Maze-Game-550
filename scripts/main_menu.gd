@@ -10,7 +10,7 @@ extends Control
 @onready var level_selector = $VBoxContainer/LevelSelectorButton
 @onready var level_editor_button = $VBoxContainer/LevelEditorButton
 @onready var quit_button = $VBoxContainer/QuitButton
-var LevelData = preload("res://scripts/level_menu.gd").new()
+var LevelData = preload("res://scripts/level_data.gd").new()
 var levels = LevelData.get_levels()
 
 
@@ -87,7 +87,7 @@ func _populate_level_list():
 
 func _on_level_button_pressed(level):
 	print("Selected level: ", level['name'])
-	# Example: get_tree().change_scene_to_file(level['path'])
+	get_tree().change_scene_to_file(level['path'])
 
 
 func _on_settings_menu_selected(id):

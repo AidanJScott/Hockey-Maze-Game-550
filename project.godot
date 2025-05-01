@@ -19,7 +19,7 @@ config/features=PackedStringArray("4.3", "Mobile")
 PuckVelocity="*res://puck_velocity.gd"
 Settings="*res://scripts/settings.gd"
 Global="*res://Global.gd"
-PauseMenuManager="*res://scenes/PauseMenuManager.gd"
+PauseMenuManager="*res://scripts/PauseMenuManager.gd"
 
 [display]
 
