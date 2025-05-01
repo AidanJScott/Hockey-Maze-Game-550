@@ -1,16 +1,17 @@
 extends Area2D
-@onready var yippee = $goalfz
+
+signal goal_scored
+
+func _ready():
+	self.body_entered.connect(_on_body_entered)
+
 
 func _on_body_entered(body: Node2D) -> void:
 	#Kian/EJ This is when the puck scores a goal
 	#This is where you will implement going to a goal menu  
-	print("GOAl")
-	Global.score = 0
-	yippee.play()
-	$Timer.start()
-	
-	
-
-
-func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+	if body.name == "puck":
+		print("Goal scored!")
+		var popup_scene = preload("res://scenes/GameOverPopup.tscn")
+		var popup = popup_scene.instantiate()
+		get_tree().get_root().add_child(popup) # Adjust to your actual path
+		popup.show_message("You Win!")

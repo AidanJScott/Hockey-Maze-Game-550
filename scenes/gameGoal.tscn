@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ndutpaw3ipib"]
+[gd_scene load_steps=5 format=3 uid="uid://b0ug72iom3l24"]
 
-[ext_resource type="PackedScene" uid="uid://cv1joqspgg37g" path="res://scenes/scoreAREA.tscn" id="1_kt5ug"]
-[ext_resource type="AudioStream" uid="uid://df0g3ca8mfnwv" path="res://music and sounds/goal.wav" id="2_w5gec"]
+[ext_resource type="PackedScene" uid="uid://cr77q2acqlbrv" path="res://scenes/scoreAREA.tscn" id="1_kt5ug"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bka2u"]
 size = Vector2(20, 122)
@@ -19,24 +18,16 @@ size = Vector2(20, 126)
 [node name="StaticBody2D" type="StaticBody2D" parent="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
-position = Vector2(50, 0)
-scale = Vector2(0.8, 0.5)
+position = Vector2(45, 0)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_bka2u")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
-position = Vector2(0, -32)
-scale = Vector2(0.5, 0.8)
+position = Vector2(0, -27)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_c2p3i")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
-position = Vector2(-51, 0)
-scale = Vector2(0.8, 0.5)
+position = Vector2(-45, 0)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_2gg76")
-
-[node name="Timer" type="Timer" parent="Area2D"]
-wait_time = 1.5
-
-[node name="goalfz" type="AudioStreamPlayer2D" parent="Area2D"]
-stream = ExtResource("2_w5gec")
-
-[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]
