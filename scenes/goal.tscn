@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ndutpaw3ipib"]
+[gd_scene load_steps=5 format=3 uid="uid://b0ug72iom3l24"]
 
-[ext_resource type="PackedScene" uid="uid://cv1joqspgg37g" path="res://scenes/scoreAREA.tscn" id="1_kt5ug"]
+[ext_resource type="PackedScene" uid="uid://cr77q2acqlbrv" path="res://scenes/scoreAREA.tscn" id="1_kt5ug"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bka2u"]
 size = Vector2(20, 122)
