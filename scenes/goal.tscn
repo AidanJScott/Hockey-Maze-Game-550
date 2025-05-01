@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ndutpaw3ipib"]
+[gd_scene load_steps=7 format=3 uid="uid://ndutpaw3ipib"]
 
 [ext_resource type="PackedScene" uid="uid://dpigdubxm4rfm" path="res://scenes/scoreAREA.tscn" id="1_kt5ug"]
+[ext_resource type="AudioStream" uid="uid://b2rv8ox6r8x5l" path="res://music and sounds/yippe.wav" id="2_mejr4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bka2u"]
 size = Vector2(20, 122)
@@ -45,3 +46,11 @@ visible = false
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_qidtd")
 disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="goalfz" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_mejr4")
+
+[connection signal="timeout" from="Timer" to="Area2D" method="_on_timer_timeout"]

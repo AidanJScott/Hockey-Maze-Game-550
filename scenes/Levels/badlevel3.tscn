@@ -1,0 +1,529 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq0x7n0n6iuwx"]
+
+[ext_resource type="PackedScene" uid="uid://0m4swvnstdrn" path="res://scenes/IceFloorTileMap.tscn" id="1_o0pu0"]
+[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="2_tdyhy"]
+[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/premadeWALL.tscn" id="3_pa4bj"]
+[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="4_elsvo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="IceFloorTileMap" parent="." instance=ExtResource("1_o0pu0")]
+position = Vector2(-33, -358)
+
+[node name="puck" parent="." instance=ExtResource("2_tdyhy")]
+position = Vector2(567, -33)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(507, -100)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(336, -100)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(167, -100)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(509, 30)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(331, 30)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(153, 31)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(45, 30)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(507, -378)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(329, -378)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D13" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(151, -377)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(43, -378)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(-53, -30)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(-53, -199)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(-53, -260)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D18" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(129, -250)
+scale = Vector2(5, 3)
+
+[node name="StaticBody2D19" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(267, -253)
+scale = Vector2(5, 3)
+
+[node name="StaticBody2D20" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(418, -254)
+scale = Vector2(5, 3)
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(628, -30)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D16" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(628, -199)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D17" parent="." instance=ExtResource("3_pa4bj")]
+position = Vector2(628, -260)
+scale = Vector2(5, 5)
+
+[node name="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(113, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D2" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(146, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D28" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(196, -235)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D29" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(344, -240)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D3" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(180, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D4" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(215, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D30" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(198, -151)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D31" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(345, -151)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D5" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(256, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D6" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(296, -49)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D7" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(333, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D8" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(371, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D9" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(403, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D10" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(449, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D11" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(490, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D12" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(534, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D13" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(575, -48)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D15" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(113, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D16" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(146, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D17" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(180, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D18" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(215, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D19" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(256, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D20" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(296, 13)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D21" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(333, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D22" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(371, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D23" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(403, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D24" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(449, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D25" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(490, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D26" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(534, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D27" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(575, 14)
+scale = Vector2(10, 10)
+script = null
+
+[node name="Node2D14" parent="." instance=ExtResource("4_elsvo")]
+position = Vector2(549, -159)
+rotation = 3.14159

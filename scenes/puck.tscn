@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://baplx7uprs8yt"]
+[gd_scene load_steps=10 format=3 uid="uid://baplx7uprs8yt"]
 
 [ext_resource type="Script" path="res://scripts/puckScript.gd" id="1_5dupl"]
 [ext_resource type="Texture2D" uid="uid://bxiuwxx2ortm5" path="res://Assets/puckSprite.png" id="2_10uek"]
 [ext_resource type="Texture2D" uid="uid://dtml5blmi1ca3" path="res://Assets/arrow.png" id="3_7tdh7"]
 [ext_resource type="Script" path="res://scripts/arrow.gd" id="3_xdc5d"]
 [ext_resource type="Script" path="res://scripts/score.gd" id="5_dblwb"]
+[ext_resource type="AudioStream" uid="uid://c14ut0d2yht4" path="res://music and sounds/puckhitfx.wav" id="6_2mndn"]
+[ext_resource type="AudioStream" uid="uid://ct1a6yyg64x7r" path="res://music and sounds/godot level music.wav" id="7_7csxs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alv8x"]
 rough = true
@@ -74,8 +76,11 @@ wait_time = 0.5
 wait_time = 1.8
 
 [node name="soundFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2mndn")
 
 [node name="levelMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_7csxs")
+autoplay = true
 
 [connection signal="value_changed" from="CanvasLayer/powerBar/slider" to="RigidBody2D" method="sliderChanged"]
 [connection signal="timeout" from="hitTimer" to="RigidBody2D" method="_on_hit_timer_timeout"]

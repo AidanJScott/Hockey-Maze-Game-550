@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://csgopm3hs2pga"]
 
-[ext_resource type="PackedScene" path="res://scenes/ICEWITHWALLS.tscn" id="1_jcu02"]
+[ext_resource type="PackedScene" uid="uid://cbf4hd14a8td4" path="res://scenes/ICEWITHWALLS.tscn" id="1_jcu02"]
 [ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="2_wfd8h"]
-[ext_resource type="PackedScene" uid="uid://h7mg0dbflvnf" path="res://scenes/moveableEnemyHOR.tscn" id="3_tacyu"]
+[ext_resource type="PackedScene" uid="uid://cq0fmk46jdwu" path="res://scenes/moveableEnemyHOR.tscn" id="3_tacyu"]
 [ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="4_ebeky"]
 [ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/premadeWALL.tscn" id="5_7tyd8"]
 

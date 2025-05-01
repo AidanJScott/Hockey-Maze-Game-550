@@ -1,0 +1,217 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxgvft5102w5f"]
+
+[ext_resource type="PackedScene" uid="uid://cbf4hd14a8td4" path="res://scenes/ICEWITHWALLS.tscn" id="1_xl5yt"]
+[ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="2_x83tt"]
+[ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/premadeWALL.tscn" id="3_6g6ib"]
+[ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="4_0yn6l"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_xl5yt")]
+position = Vector2(1561, 789)
+
+[node name="puck" parent="." instance=ExtResource("2_x83tt")]
+position = Vector2(2975, 1240)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_6g6ib")]
+position = Vector2(2551, 1517)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("3_6g6ib")]
+position = Vector2(2637, 1522)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("3_6g6ib")]
+position = Vector2(2858, 1443)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("3_6g6ib")]
+position = Vector2(2595, 1442)
+rotation = 1.5708
+scale = Vector2(5, 3)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("3_6g6ib")]
+position = Vector2(2945, 1320)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("3_6g6ib")]
+position = Vector2(2945, 1383)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_6g6ib")]
+position = Vector2(2550, 1427)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_6g6ib")]
+position = Vector2(2511, 1428)
+rotation = 1.5708
+scale = Vector2(5, 2)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("3_6g6ib")]
+position = Vector2(2597, 1347)
+rotation = 1.5708
+scale = Vector2(5, 2)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_6g6ib")]
+position = Vector2(2421, 1428)
+rotation = 1.5708
+scale = Vector2(5, 2)
+
+[node name="Node2D2" parent="." instance=ExtResource("4_0yn6l")]
+position = Vector2(2467, 1550)
+rotation = 3.14159
+
+[node name="Node2D3" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2507, 1415)
+scale = Vector2(15, 15)
+script = null
+
+[node name="Node2D11" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2507, 1415)
+scale = Vector2(15, 15)
+script = null
+
+[node name="Node2D12" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2861, 1428)
+scale = Vector2(15, 15)
+script = null
+
+[node name="Node2D13" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2810, 1428)
+scale = Vector2(15, 15)
+script = null
+
+[node name="Node2D5" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2676, 1593)
+scale = Vector2(15, 15)
+script = null
+
+[node name="Node2D6" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2676, 1544)
+scale = Vector2(15, 15)
+script = null
+
+[node name="Node2D7" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2677, 1495)
+scale = Vector2(15, 15)
+script = null
+
+[node name="Node2D8" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2901, 1379)
+scale = Vector2(15, 15)
+script = null
+
+[node name="Node2D9" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2901, 1330)
+scale = Vector2(15, 15)
+script = null
+
+[node name="Node2D10" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2902, 1281)
+scale = Vector2(15, 15)
+script = null
+
+[node name="Node2D4" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(2436, 1415)
+scale = Vector2(15, 15)
+script = null

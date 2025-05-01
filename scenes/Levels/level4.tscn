@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://lh35nh4jxrkd" path="res://scenes/premadeWALL.tscn" id="2_sjt6h"]
 [ext_resource type="PackedScene" uid="uid://baplx7uprs8yt" path="res://scenes/puck.tscn" id="3_inlr3"]
 [ext_resource type="PackedScene" uid="uid://ndutpaw3ipib" path="res://scenes/goal.tscn" id="4_mil14"]
-[ext_resource type="PackedScene" uid="uid://cou83tw2bc6vl" path="res://scenes/moveableEnemyVERT.tscn" id="5_thbeb"]
-[ext_resource type="PackedScene" uid="uid://h7mg0dbflvnf" path="res://scenes/moveableEnemyHOR.tscn" id="6_qge7g"]
+[ext_resource type="PackedScene" uid="uid://cou83tw2bc6vl" path="res://moveableEnemyVERT.tscn" id="5_thbeb"]
+[ext_resource type="PackedScene" uid="uid://cq0fmk46jdwu" path="res://scenes/moveableEnemyHOR.tscn" id="6_qge7g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w4iys"]
 texture = ExtResource("1_ri4o4")
